@@ -57,7 +57,7 @@ func (h *Heap) siftDown(p int) {
 	c1 := lhsChild(p)
 	c2 := rhsChild(p)
 
-	if !(h.invariantHolds(p, c1) && h.invariantHolds(p, c2)) {
+	if !h.invariantHolds(p, c1) || !h.invariantHolds(p, c2) {
 		if c2 >= h.Size() || h.less(c1, c2) {
 			h.swap(p, c1)
 			h.siftDown(c1)
