@@ -106,7 +106,7 @@ func (h *Heap) swap(x int, y int) {
 	h.data[y] = t
 }
 
-// minheap: x < y, maxheap: x > y
+// min heap: x < y, max heap: x > y
 func (h *Heap) less(x int, y int) bool {
 	a := h.data[x]
 	b := h.data[y]
@@ -120,17 +120,17 @@ func (h *Heap) less(x int, y int) bool {
 
 // Return true if x < y
 func lt(x Item, y Item) bool {
-    return x.Less(y)
+	return x.Less(y)
 }
 
 // Return true if x > y
 func gt(x Item, y Item) bool {
-    return !lt(x, y) && !eq(x, y)
+	return !lt(x, y) && !eq(x, y)
 }
 
 // Return true if x == y
 func eq(x Item, y Item) bool {
-    return !x.Less(y) && !y.Less(x)
+	return !x.Less(y) && !y.Less(x)
 }
 
 // Remove the last element from the array
