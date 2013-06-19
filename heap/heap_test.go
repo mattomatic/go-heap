@@ -83,7 +83,7 @@ func TestRandomMax(t *testing.T) {
 
 	x := h.Peek()
 	for h.Size() > 0 {
-		if greaterThan(h.Peek(), x) {
+		if gt(h.Peek(), x) {
 			t.Error()
 		}
 
